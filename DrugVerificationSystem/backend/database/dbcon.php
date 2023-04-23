@@ -8,7 +8,7 @@ $port=4000;
 $con=mysqli_connect($host,$username,'',$database,$port);
 
 if($con){
-    echo 'Connected successfully';
+    echo '';
  
 }else{
     
@@ -18,5 +18,4 @@ if($con){
 
 
 
-
-?>
+?> 
