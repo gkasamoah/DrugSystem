@@ -4,7 +4,7 @@ require_once('C:\Users\Asamoah Gregory\Desktop\xamp\htdocs\DrugVerificationSyste
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,10 +18,10 @@ require_once('C:\Users\Asamoah Gregory\Desktop\xamp\htdocs\DrugVerificationSyste
     <!--The hero Section-->
     <div class=" container-fluid" id="SearchDrug">
         <img src="https://img.freepik.com/free-photo/flat-lay-medical-composition-with-clipboard-template_23-2148124585.jpg?size=626&ext=jpg&ga=GA1.1.1732100777.1679974209&semt=ais" alt="Hero-image" width="100%" height="300px">
-
+      <div class=' container-fluid bg-primary m-2' style="height:150px"> <p class=" text-light text-center fw-bolder fs-3" style="padding:60px"> We are the solution to your Drug Concerns and Safety </p>   </div>
 
         <div style="background-color: #DBE4EB; margin: 25px;" class=" d-flex justify-content-center"> <div>
-            <p class=" fw-bolder fs-1">
+            <p class="fs-1 fw-light">
             Enter the name of the drug Here</p>
             <form action="">
                 <input type="search" name="" id="" placeholder="Drug names" class=" form-control"> <br> <button type="submit" class=" btn-success btn-md">Check</button>
@@ -30,8 +30,26 @@ require_once('C:\Users\Asamoah Gregory\Desktop\xamp\htdocs\DrugVerificationSyste
     </div>  
 
 
+    <div style="background-color: blue; height:10%; display:flex; justify-content:space-around;">
+       <div> <p style="color:white"> About Us</p> 
+       <p style="color:white"> Services</p>
+       <p style="color:white"> Privacy Policy</p>
+    </div>
 
-   <?php include_once('C:\Users\Asamoah Gregory\Desktop\xamp\htdocs\DrugVerificationSystem\public\footer.html') ?>
+    <div> <p style="color:white"> Location</p> 
+       <p style="color:white"> University Campus, Second Lane Achimota Hostel  </p>
+       
+    </div>
+
+                                                                                                                                                                                      
+                                                                                                                                                                
+                                                            
+       
+
+
+    </div>
+
+  
     </div>
 
 
