@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(225, 216, 206);
+}
+#container{
+    padding: 80px;
+}
+
+label input:invalid{
+    border-color: rgb(233, 52, 52);
+}
+label input:valid{
+    border-color: green;
+}
+form input[type="submit"]{
+   background-color: rgb(11, 226, 11);
+   color: white;
+}
+
+label span{
+    color: rgb(243, 22, 22);
+}

@@ -1,5 +1,6 @@
 <?php
 require_once('C:\Users\Asamoah Gregory\Desktop\xamp\htdocs\DrugVerificationSystem\public\header.html');
+require_once("C:\Users\ASAMOAH GREGORY/Desktop/xamp/htdocs/DrugVerificationSystem/backend/database/dbcon.php")
 ?>
 
 
@@ -23,15 +24,33 @@ require_once('C:\Users\Asamoah Gregory\Desktop\xamp\htdocs\DrugVerificationSyste
         <div style="background-color: #DBE4EB; margin: 25px;" class=" d-flex justify-content-center"> <div>
             <p class=" fw-bolder fs-1">
             Enter the name of the drug Here</p>
-            <form action="">
-                <input type="search" name="" id="" placeholder="Drug names" class=" form-control"> <br> <button type="submit" class=" btn-success btn-md">Check</button>
-            </form>
+            <form action="<?php $_SERVER["PHP_SELF"] ?>" method="post" >
+                <input type="search" name="search" id="" placeholder="Drug names" class=" form-control"> <br> 
+                <button type="submit" class=" btn-success btn-md">Check</button>
+             </form>
+             <?php
+                $search=$_POST["search"];  
+                $sql="SELECT * FROM  drug where `name` = '$search' ";
+                if(!$sql){
+                    echo mysqli_error($con);
+                }
+               $query= mysqli_query($con,$sql);
+               if(mysqli_num_rows($query)>0){
+                while($results=mysqli_fetch_assoc($query)){
+                    echo  "<a href='../qrcode.php'>"  .$results["name"]."</a>". "<br>";
+                }
+               }else{
+                echo "this  drug found cannot in th database";
+               }
+                
+                ?>
+           
         </div>
     </div>  
 
 
 
-   <?php include_once('C:\Users\Asamoah Gregory\Desktop\xamp\htdocs\DrugVerificationSystem\public\footer.html') ?>
+  
     </div>
 
 
@@ -46,7 +65,7 @@ require_once('C:\Users\Asamoah Gregory\Desktop\xamp\htdocs\DrugVerificationSyste
 
 
 
-
+    <?php include_once('C:\Users\Asamoah Gregory\Desktop\xamp\htdocs\DrugVerificationSystem\public\footer.html') ?> 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
